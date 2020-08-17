@@ -1,0 +1,45 @@
+#####LOGGER INFORMATION#####
+# logger name: date_count
+training_id: '20190806_0'
+
+#####NETWORK STRUCTURE PARAMS#####
+embedding_dim: 128
+hidden_dim: 128
+coding_level: 'char'
+model_saved_path: 'params/'
+actions:
+#  - 'pretraining'
+  - 'glossary'
+
+#####GLOSSARY_EXTRACTING PARAMS#####
+glossary_extracting:
+  batch_size: 20
+  epoch_num: 200
+  learning_rate: 0.01
+  weight_decay: 1e-4
+  dropout: 0.5
+
+#####PRETRAINING PARAMS#####
+pretraining:
+  is_pretraining: True
+#  corpus_path: 'wiki_data/pretraining_corpus_finance.txt'
+  corpus_path: 'wiki_data/pretraining_corpus.txt'
+  batch_size: 20
+  epoch_num: 10
+  learning_rate: 0.0001
+  weight_decay: 1e-4
+  dropout: 0.5
+  keywords:
+#    - '软件'
+#    - '数据库'
+#    - '计算机'
+#    - '计算机网络'
+#    - '敏捷开发'
+    - '银行'
+    - '金融'
+    - '理财'
+    - '基金'
+    - '证券'
+    - '投资'
+    - '保险'
+    - '信用卡'
